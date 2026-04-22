@@ -8,42 +8,42 @@ const App = () => {
 
   const stats = [
     {
-      label: 'Scale',
-      value: '50M+ MAU',
-      icon: <Icons.Users className="text-blue-400" />, // Added Icons. prefix
+      label: 'Angular',
+      value: 'V19 Signals',
+      icon: <Icons.Zap className="text-emerald-400" />,
+    },
+    {
+      label: 'React',
+      value: 'RSC & Next.js',
+      icon: <Icons.Code2 className="text-blue-400" />,
     },
     {
       label: 'Efficiency',
       value: '90% Logic Reuse',
-      icon: <Icons.Zap className="text-emerald-400" />, // Added Icons. prefix
-    },
-    {
-      label: 'Uptime',
-      value: '99.9%',
-      icon: <Icons.ShieldCheck className="text-purple-400" />, // Added Icons. prefix
+      icon: <Icons.Repeat className="text-purple-400" />,
     },
   ];
 
   const projects = [
     {
-      title: 'NexusNative Orchestrator',
-      type: 'Mobile',
-      tags: ['React Native', 'AI/LLM', 'GraphQL'],
-      desc: 'AI-driven SDUI framework that translates natural language into native mobile interfaces using Hermes-optimized rendering.',
+      title: 'Enterprise Risk Portal',
+      type: 'Angular',
+      tags: ['Angular 19', 'RxJS', 'Standalone APIs'],
+      desc: 'Architected a high-security risk management dashboard utilizing Signal-based state management for real-time data streaming.',
       link: '#',
     },
     {
-      title: 'Enterprise Rationalization',
-      type: 'Web',
-      tags: ['React', 'TypeScript', 'Micro-frontends'],
-      desc: 'Architected the migration of 72 legacy sub-apps into a unified React ecosystem for MetLife Japan.',
+      title: 'Global Retail Core',
+      type: 'React',
+      tags: ['React 18', 'Next.js', 'TypeScript'],
+      desc: 'Engineered a multi-tenant retail platform leveraging React Server Components (RSC) to optimize core web vitals and SEO.',
       link: '#',
     },
     {
-      title: 'SDUI Retail Framework',
+      title: 'Cross-Framework Bridge',
       type: 'Hybrid',
-      tags: ['React Native', 'Next.js', 'Node.js'],
-      desc: 'Decoupled UI schema from client release cycles at Verizon, reducing feature deployment from 2 weeks to 4 hours.',
+      tags: ['Angular', 'React', 'Micro-frontends'],
+      desc: 'Directed the migration of 70+ legacy sub-apps into a unified ecosystem using Module Federation and Web Components.',
       link: '#',
     },
   ];
@@ -67,7 +67,7 @@ const App = () => {
               href="mailto:radhabhatta05@gmail.com"
               className="bg-blue-600 text-white px-4 py-1.5 rounded-full hover:bg-blue-500 transition-all"
             >
-              Hire Me
+              Contact
             </a>
           </div>
         </div>
@@ -81,16 +81,16 @@ const App = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
             </span>
-            AVAILABLE FOR SENIOR/LEAD ROLES
+            UI ARCHITECT | ANGULAR & REACT SPECIALIST
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">
-            Architecting <span className="text-blue-500">Hybrid</span> <br />
-            Experiences.
+            Bridging <span className="text-blue-500">Modern</span> <br />
+            UI Frameworks.
           </h1>
           <p className="text-xl text-slate-400 max-w-2xl leading-relaxed mb-10">
-            Lead Software Engineer with 8+ years experience. I bridge the gap
-            between high-scale Web (React) and performant Mobile (React Native)
-            ecosystems.
+            Lead Software Engineer with 8+ years experience. I specialize in
+            architecting performant, scalable applications across the{' '}
+            <b>Angular</b> and <b>React</b> ecosystems.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
@@ -112,13 +112,13 @@ const App = () => {
         </div>
       </section>
 
-      {/* Projects Grid */}
+      {/* Impact Section */}
       <section id="work" className="py-20 px-6 bg-slate-900/50">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-12">
             <h2 className="text-3xl font-bold text-white">Selected Impact</h2>
             <div className="flex bg-slate-800 p-1 rounded-lg">
-              {['all', 'Mobile', 'Web'].map((t) => (
+              {['all', 'Angular', 'React'].map((t) => (
                 <button
                   key={t}
                   onClick={() => setActiveTab(t)}
@@ -128,7 +128,7 @@ const App = () => {
                       : 'text-slate-400 hover:text-white'
                   }`}
                 >
-                  {t.charAt(0).toUpperCase() + t.slice(1)}
+                  {t}
                 </button>
               ))}
             </div>
@@ -136,7 +136,12 @@ const App = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {projects
-              .filter((p) => activeTab === 'all' || p.type === activeTab)
+              .filter(
+                (p) =>
+                  activeTab === 'all' ||
+                  p.type === activeTab ||
+                  p.type === 'Hybrid'
+              )
               .map((project, i) => (
                 <div
                   key={i}
@@ -144,10 +149,10 @@ const App = () => {
                 >
                   <div className="flex justify-between items-start mb-6">
                     <div className="p-3 bg-slate-900 rounded-2xl group-hover:bg-blue-600/20 transition-colors">
-                      {project.type === 'Mobile' ? (
-                        <Icons.Smartphone className="text-blue-400" />
+                      {project.type === 'Angular' ? (
+                        <Icons.ShieldCheck className="text-emerald-400" />
                       ) : (
-                        <Icons.Monitor className="text-emerald-400" />
+                        <Icons.Monitor className="text-blue-400" />
                       )}
                     </div>
                     <Icons.ExternalLink
@@ -177,24 +182,24 @@ const App = () => {
         </div>
       </section>
 
-      {/* Technical Footer */}
+      {/* Footer */}
       <footer className="py-20 px-6 border-t border-slate-800/50">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-white mb-8">
-            Let's build something scalable.
+            Ready to build something scalable?
           </h2>
           <div className="flex justify-center gap-8 text-slate-500">
             <a
               href="https://github.com"
               className="hover:text-white transition-colors"
             >
-              {/* <Github /> */}
+              <Icons.Github />
             </a>
             <a
               href="https://linkedin.com/in/radha-madhavi/"
               className="hover:text-white transition-colors"
             >
-              {/* <Linkedin /> */}
+              <Icons.Linkedin />
             </a>
             <a
               href="mailto:radhabhatta05@gmail.com"
@@ -203,8 +208,8 @@ const App = () => {
               <Icons.Mail />
             </a>
           </div>
-          <p className="mt-12 text-sm text-slate-600">
-            © 2026 Radha Bhatta. Engineered with React & Tailwind.
+          <p className="mt-12 text-sm text-slate-600 uppercase tracking-widest">
+            © 2026 Radha Bhatta • Lead UI Architect
           </p>
         </div>
       </footer>
