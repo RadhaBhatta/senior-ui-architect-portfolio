@@ -1,4 +1,68 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 @import "tailwindcss";
+
+/* 1. Configuration & Custom Theme Variables */
+@theme {
+  --color-brand-bg: #0f172a;
+  --color-brand-card: #1e293b;
+  --color-brand-accent: #3b82f6;
+  
+  /* Custom animation for the "Available for Hire" badge */
+  @keyframes ripple {
+    0% { transform: scale(0.8); opacity: 0.5; }
+    100% { transform: scale(2.4); opacity: 0; }
+  }
+}
+
+/* 2. Global Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-[#0f172a] text-slate-300 antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "symbols";
+  }
+
+  /* Custom Scrollbar for a premium feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-[#0f172a];
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full hover:bg-slate-600 transition-colors;
+  }
+}
+
+/* 3. Component & Utility Overrides */
+@layer components {
+  .glass-card {
+    @apply bg-slate-800/40 border border-slate-700/50 backdrop-blur-sm 
+           hover:bg-slate-800/60 transition-all duration-300;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-slate-400 hover:text-blue-400 
+           transition-colors duration-200 cursor-pointer;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent;
+  }
+}
+
+/* 4. Custom Utilities */
+@layer utilities {
+  .animate-ripple {
+    animation: ripple 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+  
+  /* Adds a subtle glow effect to cards */
+  .glow-on-hover {
+    @apply hover:shadow-[0_0_20px_rgba(59,130,246,0.15)];
+  }
+}
