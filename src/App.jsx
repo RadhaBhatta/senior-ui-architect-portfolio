@@ -186,7 +186,7 @@ const App = () => {
             </a>
           </div>
           <p className="mt-12 text-sm text-slate-600">
-            © 2026 Radha Bhatta. Engineered with React & Tailwind.
+            © 2026 Radha Bhatta. Engineered with UI.
           </p>
         </div>
       </footer>
