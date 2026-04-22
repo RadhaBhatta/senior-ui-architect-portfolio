@@ -3,24 +3,25 @@ console.log('App.jsx is loading!');
 import React, { useState } from 'react';
 import * as Icons from 'lucide-react';
 
+
 const App = () => {
   const [activeTab, setActiveTab] = useState('all');
 
   const stats = [
     {
-      label: 'Angular',
-      value: 'V19 Signals',
-      icon: <Icons.Zap className="text-emerald-400" />,
-    },
-    {
-      label: 'React',
-      value: 'RSC & Next.js',
-      icon: <Icons.Code2 className="text-blue-400" />,
+      label: 'Scale',
+      value: '50M+ MAU',
+      icon: <Icons.Users className="text-blue-400" />, // Added Icons. prefix
     },
     {
       label: 'Efficiency',
       value: '90% Logic Reuse',
-      icon: <Icons.Repeat className="text-purple-400" />,
+      icon: <Icons.Zap className="text-emerald-400" />, // Added Icons. prefix
+    },
+    {
+      label: 'Uptime',
+      value: '99.9%',
+      icon: <Icons.ShieldCheck className="text-purple-400" />, // Added Icons. prefix
     },
   ];
 
@@ -33,10 +34,10 @@ const App = () => {
       link: '#',
     },
     {
-      title: 'Global Retail Core',
-      type: 'React',
-      tags: ['React 18', 'Next.js', 'TypeScript'],
-      desc: 'Engineered a multi-tenant retail platform leveraging React Server Components (RSC) to optimize core web vitals and SEO.',
+      title: 'Enterprise Rationalization',
+      type: 'Web',
+      tags: ['React', 'TypeScript', 'Micro-frontends'],
+      desc: 'Architected the migration of 72 legacy sub-apps into a unified React ecosystem for MetLife Japan.',
       link: '#',
     },
     {
@@ -44,7 +45,7 @@ const App = () => {
       type: 'Hybrid',
       tags: ['Angular', 'React', 'Micro-frontends'],
       desc: 'Directed the migration of 70+ legacy sub-apps into a unified ecosystem using Module Federation and Web Components.',
-      link: '#',
+      link: '#'
     },
   ];
 
@@ -67,7 +68,7 @@ const App = () => {
               href="mailto:radhabhatta05@gmail.com"
               className="bg-blue-600 text-white px-4 py-1.5 rounded-full hover:bg-blue-500 transition-all"
             >
-              Contact
+              Hire Me
             </a>
           </div>
         </div>
@@ -81,16 +82,14 @@ const App = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
             </span>
-            UI ARCHITECT | ANGULAR & REACT SPECIALIST
+            AVAILABLE FOR SENIOR/LEAD ROLES
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">
-            Bridging <span className="text-blue-500">Modern</span> <br />
-            UI Frameworks.
+            Architecting <span className="text-blue-500">Hybrid</span> <br />
+            Experiences.
           </h1>
           <p className="text-xl text-slate-400 max-w-2xl leading-relaxed mb-10">
-            Lead Software Engineer with 8+ years experience. I specialize in
-            architecting performant, scalable applications across the{' '}
-            <b>Angular</b> and <b>React</b> ecosystems.
+            Lead Software Engineer with 10+ years experience. I specialize in architecting performant, scalable applications across the <b>Angular</b> and <b>React</b> ecosystems.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
@@ -136,42 +135,20 @@ const App = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {projects
-              .filter(
-                (p) =>
-                  activeTab === 'all' ||
-                  p.type === activeTab ||
-                  p.type === 'Hybrid'
-              )
+              .filter((p) => activeTab === 'all' || p.type === activeTab || p.type === 'Hybrid')
               .map((project, i) => (
-                <div
-                  key={i}
-                  className="group relative bg-slate-800/50 border border-slate-700/50 rounded-3xl p-8 hover:bg-slate-800 transition-all hover:-translate-y-2"
-                >
+                <div key={i} className="group relative bg-slate-800/50 border border-slate-700/50 rounded-3xl p-8 hover:bg-slate-800 transition-all hover:-translate-y-2">
                   <div className="flex justify-between items-start mb-6">
                     <div className="p-3 bg-slate-900 rounded-2xl group-hover:bg-blue-600/20 transition-colors">
-                      {project.type === 'Angular' ? (
-                        <Icons.ShieldCheck className="text-emerald-400" />
-                      ) : (
-                        <Icons.Monitor className="text-blue-400" />
-                      )}
+                      {project.type === 'Angular' ? <Icons.ShieldCheck className="text-emerald-400" /> : <Icons.Monitor className="text-blue-400" />}
                     </div>
-                    <Icons.ExternalLink
-                      size={20}
-                      className="text-slate-600 group-hover:text-blue-400 transition-colors"
-                    />
+                    <Icons.ExternalLink size={20} className="text-slate-600 group-hover:text-blue-400 transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">
-                    {project.title}
-                  </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                    {project.desc}
-                  </p>
+                  <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-6">{project.desc}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[10px] font-bold px-2 py-1 bg-slate-900 rounded-md border border-slate-700 text-slate-400 uppercase tracking-tighter"
-                      >
+                      <span key={tag} className="text-[10px] font-bold px-2 py-1 bg-slate-900 rounded-md border border-slate-700 text-slate-400 uppercase tracking-tighter">
                         {tag}
                       </span>
                     ))}
@@ -182,24 +159,24 @@ const App = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Technical Footer */}
       <footer className="py-20 px-6 border-t border-slate-800/50">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-white mb-8">
-            Ready to build something scalable?
+            Let's build something scalable.
           </h2>
           <div className="flex justify-center gap-8 text-slate-500">
             <a
               href="https://github.com"
               className="hover:text-white transition-colors"
             >
-              <Icons.Github />
+              {/* <Github /> */}
             </a>
             <a
               href="https://linkedin.com/in/radha-madhavi/"
               className="hover:text-white transition-colors"
             >
-              <Icons.Linkedin />
+              {/* <Linkedin /> */}
             </a>
             <a
               href="mailto:radhabhatta05@gmail.com"
@@ -208,8 +185,8 @@ const App = () => {
               <Icons.Mail />
             </a>
           </div>
-          <p className="mt-12 text-sm text-slate-600 uppercase tracking-widest">
-            © 2026 Radha Bhatta • Lead UI Architect
+          <p className="mt-12 text-sm text-slate-600">
+            © 2026 Radha Bhatta. Engineered with React & Tailwind.
           </p>
         </div>
       </footer>
